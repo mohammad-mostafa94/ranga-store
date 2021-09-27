@@ -12,20 +12,27 @@ const showProducts = (products) => {
     const image = product.image;
     const div = document.createElement("div");
     div.classList.add("product");
-    div.innerHTML = `<div class="single-product">
+    div.innerHTML =
+    
+    `<div class="single-product">
       <div>
     <img class="product-image" src=${image}></img>
       </div>
       <h3>${product.title}</h3>
-      <p>Category: ${product.category}</p>
-      <h2>Price: $ ${product.price}</h2>
+      <h5>Category: ${product.category}</h5>
+      <h3>Price: $ ${product.price}</h3>
+      <h5>Rating: ${product.rating.rate}  &  Count: ${product.rating.count}</h5>
       <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-danger">Details</button></div>
+      <button id="details-btn" class="btn btn-info">Details</button></div>
       `;
+
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+
 let count = 0;
+// cart updated function
 const addToCart = (id, price) => {
   count = count + 1;
   updatePrice("price", price);
@@ -34,6 +41,7 @@ const addToCart = (id, price) => {
   document.getElementById("total-Products").innerText = count;
 };
 
+// dynamically input value found function
 const getInputValue = (id) => {
   const element = document.getElementById(id).innerText;
   const converted = parseFloat(element);
