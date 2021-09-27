@@ -228,24 +228,28 @@ const loadProducts = () => {
 const showProducts = (products) => {
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.image;
+    const title = product.title;
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML =
 
       `<div class="single-product">
       <div>
-    <img class="product-image" src=${image}></img>
+    <img class="product-image" src=${product.image}></img>
       </div>
-      <h3>${product.title}</h3>
+      <h3>${title}</h3>
       <h4>Category: ${product.category}</h4>
       <h3>Price: $ ${product.price}</h3>
 
       <div class="card-footer">
       <h5> <i>&#11088; ${product.rating.rate} </i><i>&#128106; ${product.rating.count}</i>  </h5>
       
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class=" buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-info">Details</button>
+      <button 
+      onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class=" buy-now btn btn-success">add to cart</button>
+      
+      <button 
+      onclick="cartDetails(${product.id},${product.price},${product.rating.rate},${product.rating.count})"
+      id="details-btn" class="btn btn-info">Details</button>
       
       </div>
       </div>
@@ -255,6 +259,16 @@ const showProducts = (products) => {
   }
 };
 
+// card details function
+const cartDetails = (id, price, rate, count) => {
+  const div = document.createElement("div");
+  div.innerHTML =`
+  <h3>Serial No:${id}</h3>
+  <h3>Price: $ ${price}</h3>
+  <h5> <i>&#11088; ${rate} </i><i>&#128106; ${count}</i>  </h5>
+  `
+  document.getElementById("details").appendChild(div);
+}
 
 let count = 0;
 // cart updated function
