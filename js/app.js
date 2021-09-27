@@ -144,7 +144,7 @@ const loadProducts = () => {
     }
   }, {
     "id": 14,
-    "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+    "title": "Samsung 49-Inch CHG90 Super Ultrawide Screen QLED ",
     "price": 999.99,
     "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag",
     "category": "electronics",
@@ -240,10 +240,15 @@ const showProducts = (products) => {
       <h3>${product.title}</h3>
       <h4>Category: ${product.category}</h4>
       <h3>Price: $ ${product.price}</h3>
+
+      <div class="card-footer">
       <h5> <i>&#11088; ${product.rating.rate} </i><i>&#128106; ${product.rating.count}</i>  </h5>
       
-      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class="buy-now btn btn-success">add to cart</button>
-      <button id="details-btn" class="btn btn-info">Details</button></div>
+      <button onclick="addToCart(${product.id},${product.price})" id="addToCart-btn" class=" buy-now btn btn-success">add to cart</button>
+      <button id="details-btn" class="btn btn-info">Details</button>
+      
+      </div>
+      </div>
       `;
 
     document.getElementById("all-products").appendChild(div);

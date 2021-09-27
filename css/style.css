@@ -1,4 +1,8 @@
 /* common style */
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
 body {
   overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
@@ -43,7 +47,11 @@ body {
 /* single product */
 .single-product {
   padding: 10px;
+  background-color: rgb(131, 195, 224);
   transition: 0.6s;
+  margin: 3px;
+  height: 450px;
+  border-radius: 5px;
 }
 .single-product:hover {
   box-shadow: 4px 4px 7px gray;
@@ -55,6 +63,7 @@ body {
   height: 150px;
 }
 .cart {
+  background-color: darkgrey;
   width: 350px;
   padding: 10px;
   box-shadow: 10px 10px 20px gray;
@@ -64,6 +73,7 @@ body {
 }
 .cart-main {
   padding-right: 30px;
+ 
 }
 
 /* responsive style  part */
