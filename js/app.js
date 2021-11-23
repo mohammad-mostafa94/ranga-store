@@ -262,7 +262,7 @@ const showProducts = (products) => {
 // card details function
 const cartDetails = (id, price, rate, count) => {
   const div = document.createElement("div");
-  div.innerHTML =`
+  div.innerHTML = `
   <h3>Serial No:${id}</h3>
   <h3>Price: $ ${price}</h3>
   <h5> <i>&#11088; ${rate} </i><i>&#128106; ${count}</i>  </h5>
